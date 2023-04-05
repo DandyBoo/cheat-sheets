@@ -27,31 +27,33 @@ source venv/Scripts/activate
 ```bash
 source venv/bin/activate
 ```
-
+Обновить менеджер пакетов pip
 ```bash
-
+ python -m pip install --upgrade pip
 ```
-
+Установить Django (например версию 3.2.18 LTS)
 ```bash
-
+pip install Django==3.2.18
 ```
-
+Создать базовую структуру проекта (в вирт. окружении!):
 ```bash
-
+django-admin startproject имя_проекта
 ```
-
+Сохранить зависимости в текущую директорию:
 ```bash
-
+pip freeze > requirements.txt
 ```
-
+В системах Линукс существует баг, который добавляет в список лишнюю 
+библиотеку pkg-resources==0.0.0. Эту строчку можно смело удалить и 
+формировать файл с зависимостями такой командой:
 ```bash
-
+pip freeze | grep -v "pkg-resources" > requirements.txt
 ```
-
+Установить зависимости на новой машине:
 ```bash
-
+pip install -r requirements.txt 
 ```
-
+Создать новое приложение:
 ```bash
-
+python manage.py <название приложения>
 ```
