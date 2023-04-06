@@ -55,5 +55,5 @@ pip install -r requirements.txt
 ```
 Создать новое приложение:
 ```bash
-python manage.py <название приложения>
+python manage.py startapp <название приложения>
 ```
